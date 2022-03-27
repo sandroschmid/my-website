@@ -19,7 +19,7 @@
   
   .avatar-flip,
     .avatar-img {
-    --avatar-size: 180px;
+    --avatar-size: 150px;
     width: var(--avatar-size);
     height: var(--avatar-size);
   }
@@ -27,7 +27,7 @@
   @media (min-width: 1200px) {
      .avatar-flip,
     .avatar-img {
-      --avatar-size: 250px;
+      --avatar-size: 220px;
     }
   }
   

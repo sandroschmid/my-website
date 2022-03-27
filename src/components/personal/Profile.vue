@@ -4,7 +4,7 @@ import Blockquote from "../ui/Blockquote.vue";
 
 <template>
   <section class="profile">
-    <h2>Hi there!</h2>
+    <h2>Hello, World!</h2>
     <p>
       I am a Senior Software Engineer at Dynatrace's R&amp;D headquarters in Linz, Austria.
       My current tech-stack is focused on full-stack web engineering and various AWS products.

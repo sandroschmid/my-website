@@ -35,4 +35,10 @@ import TickTackToe from "./ui/TickTackToe.vue";
   .header-end {
     margin-top: var(--gap-large);
   }
+
+  @media (min-width: 1200px) {
+    h1 {
+      margin: var(--gap-large) 0 var(--gap-normal);
+    }
+  }
 </style>
