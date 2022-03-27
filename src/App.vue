@@ -14,13 +14,9 @@ import Main from "./components/Main.vue";
 @import "./assets/styles/variables.css";
 @import "./assets/styles/base.css";
 
-:root {
-  --header-width: 300px;
-  --header-left: var(--section-gap);
-}
-
 .app-root {
-  min-width: 400px;
+  height: 100vh;
+  min-width: var(--app-min-width);
   padding: var(--gap-small);
 }
 

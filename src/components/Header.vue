@@ -1,17 +1,20 @@
 <script setup lang="ts">
 import Avatar from "./personal/Avatar.vue";
 import Social from "./personal/Social.vue";
+import TickTackToe from "./ui/TickTackToe.vue";
 </script>
 
 <template>
   <header>
     <Avatar />
-    <h1>Sandro Schmid</h1>
+    <h1>Sandro 🤓 Schmid</h1>
     <div class="caption">
-      <p>#software-engineering #angular #aws #java #spring-boot #frontend #auth</p>
+      <p>✨software-engineering ✨angular ✨aws ✨java ✨spring-boot ✨frontend ✨auth</p>
       <p>Linz, Austria</p>
     </div>
     <Social />
+    <div class="spacer"></div>
+    <TickTackToe class="header-end" />
   </header>
 </template>
 
@@ -23,5 +26,13 @@ import Social from "./personal/Social.vue";
     gap: var(--gap-normal);
     padding: var(--gap-normal);
     text-align: center;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .header-end {
+    margin-top: var(--gap-large);
   }
 </style>

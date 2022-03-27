@@ -27,7 +27,7 @@
   @media (min-width: 1200px) {
      .avatar-flip,
     .avatar-img {
-      --avatar-size: 280px;
+      --avatar-size: 250px;
     }
   }
   
