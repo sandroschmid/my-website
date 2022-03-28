@@ -10,11 +10,11 @@ import TickTackToe from "./ui/TickTackToe.vue";
     <h1>Sandro 🤓 Schmid</h1>
     <div class="caption">
       <p>✨software-engineering ✨angular ✨aws ✨java ✨spring-boot ✨frontend ✨auth</p>
-      <p>Linz, Austria</p>
+      <p>🌍 Linz, Austria 🇦🇹</p>
     </div>
     <Social />
     <div class="spacer"></div>
-    <TickTackToe class="header-end" />
+    <TickTackToe />
   </header>
 </template>
 
@@ -30,9 +30,6 @@ import TickTackToe from "./ui/TickTackToe.vue";
 
   .spacer {
     flex: 1;
-  }
-
-  .header-end {
     margin-top: var(--gap-large);
   }
 
