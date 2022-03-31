@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import Button from "../ui/Button.vue";
-import Link from "../ui/Link.vue";
-</script>
+import Button from '../ui/ButtonComponent.vue';
+import Link from '../ui/LinkComponent.vue';</script>
 
 <template>
   <div class="social">
@@ -18,14 +17,14 @@ import Link from "../ui/Link.vue";
 </template>
 
 <style scoped>
-  .social {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--gap-small);
-  }
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--gap-small);
+}
 
-  Button {
-    width: 100%;
-  }
+Button {
+  width: 100%;
+}
 </style>

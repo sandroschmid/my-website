@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
-</script>
+import Header from './components/HeaderComponent.vue';
+import Main from './components/MainComponent.vue';</script>
 
 <template>
   <div class="app-root">

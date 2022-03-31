@@ -1,10 +1,12 @@
 import { defineStore } from 'pinia';
 
 export type Player = '🦸' | '🤖';
-export type Winner = { 
-    readonly player: Player | undefined, 
-    readonly boxIndices: number[]
-} | undefined;
+export type Winner =
+  | {
+  readonly player: Player | undefined;
+  readonly boxIndices: number[];
+}
+  | undefined;
 
 export interface TickTackToeBox {
   player: Player | undefined;
@@ -66,25 +68,25 @@ export const useTickTackToeStore = defineStore('tickTackToe', {
         .fill(NO_PlAYER)
         .map((player, index) => ({ player, index })),
       winner: undefined,
-    }
+    };
   },
   getters: {
-    isDone: state => state.rounds >= MAX_ROUNDS || state.winner !== undefined,
-    description: state => {
+    isDone: (state) => state.rounds >= MAX_ROUNDS || state.winner !== undefined,
+    description: (state) => {
       if (state.rounds >= MAX_ROUNDS && state.winner === undefined) {
         return 'Remis 🥴';
       }
-    
+
       if (state.winner?.player === HUMAN) {
         return 'You won! 🎉';
       }
-    
+
       if (state.winner?.player === CPU) {
         return 'CPU won… 🤖';
       }
-    
+
       return state.nextPlayer === HUMAN ? 'Your turn!' : 'CPU is thinking…';
-    }
+    },
   },
   actions: {
     toggleGame() {
@@ -100,19 +102,23 @@ export const useTickTackToeStore = defineStore('tickTackToe', {
       }
     },
     restart() {
-      this.$patch({ 
+      this.$patch({
         playing: true,
         rounds: 0,
-        fields: this.fields.map(box => ({ ...box, player: NO_PlAYER })),
+        fields: this.fields.map((box) => ({ ...box, player: NO_PlAYER })),
         winner: undefined,
-       });
+      });
 
       if (this.nextPlayer === CPU) {
         this.doCpuMove();
       }
     },
     doHumanMove(box: TickTackToeBox): void {
-      if (!this.isDone && this.nextPlayer === HUMAN && box.player === NO_PlAYER) {
+      if (
+        !this.isDone &&
+        this.nextPlayer === HUMAN &&
+        box.player === NO_PlAYER
+      ) {
         box.player = HUMAN;
         this.onPlayed();
       }
@@ -124,10 +130,14 @@ export const useTickTackToeStore = defineStore('tickTackToe', {
       if (this.isDone) {
         return;
       }
-    
-      const availableBoxes = this.fields.filter(box => box.player === NO_PlAYER);
+
+      const availableBoxes = this.fields.filter(
+        (box) => box.player === NO_PlAYER,
+      );
       if (availableBoxes.length > 0) {
-        const availableBoxIndex = Math.floor(Math.random() * availableBoxes.length);
+        const availableBoxIndex = Math.floor(
+          Math.random() * availableBoxes.length,
+        );
         const box = availableBoxes[availableBoxIndex];
         box.player = player;
         this.onPlayed();
@@ -139,12 +149,12 @@ export const useTickTackToeStore = defineStore('tickTackToe', {
         nextPlayer: this.nextPlayer === CPU ? HUMAN : CPU,
         winner: findWinner(this),
       });
-    
+
       if (this.nextPlayer === CPU) {
         this.doCpuMove();
       } else if (this.rounds === 8) {
         this.doAutomaticMove(this.nextPlayer);
       }
-    }
+    },
   },
 });
