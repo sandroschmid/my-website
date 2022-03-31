@@ -18,6 +18,10 @@ body {
   user-select: none;
 }
 
+section + section {
+  margin-top: var(--gap-large);
+}
+
 h1, h2, h3 {
   font-weight: bold;
   color: var(--color-heading);

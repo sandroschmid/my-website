@@ -52,12 +52,12 @@
 .front {
   z-index: 2;
   transform: rotateY(0deg);
-  background-image: url("../../assets/images/sschmid.jpeg");
+  background-image: url("./sschmid.jpeg");
 }
 
 .back {
   z-index: 1;
   transform: rotateY(180deg);
-  background-image: url("../../assets/images/coding.gif");
+  background-image: url("./coding.gif");
 }
 </style>

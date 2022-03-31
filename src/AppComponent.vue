@@ -10,8 +10,8 @@ import Main from './components/MainComponent.vue';</script>
 </template>
 
 <style>
-@import "./assets/styles/variables.css";
-@import "./assets/styles/base.css";
+@import "./assets/variables.css";
+@import "./assets/base.css";
 
 .app-root {
   height: 100vh;
