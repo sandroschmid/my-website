@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LinkComponent from '@/components/ui/LinkComponent.vue';
 import { defineProps } from 'vue';
 
 defineProps<{
@@ -6,6 +7,7 @@ defineProps<{
   title: string;
   subTitle: string;
   description: string;
+  web?: { url: string, label: string };
 }>();
 </script>
 
@@ -16,6 +18,7 @@ defineProps<{
       <div class="title">{{ title }}</div>
       <div class="sub-title">{{ subTitle }}</div>
       <div class="description">{{ description }}</div>
+      <LinkComponent v-if="web" :href="web.url" :external="true">{{ web.label }}</LinkComponent>
     </div>
   </div>
 </template>
@@ -23,8 +26,8 @@ defineProps<{
 <style scoped>
 .profile-item {
   display: flex;
+  flex-direction: column;
   gap: var(--gap-normal);
-  padding: 0 var(--gap-large);
   text-align: justify;
 }
 
@@ -32,16 +35,10 @@ defineProps<{
   margin-top: var(--gap-large);
 }
 
-.profile-item:nth-of-type(2) {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-
 img {
   --profile-img-size: 4rem;
   width: var(--profile-img-size);
   height: var(--profile-img-size);
-  border-radius: 50%;
 }
 
 .profile-item-body {
@@ -57,5 +54,22 @@ img {
 
 .description {
   margin-top: var(--gap-small);
+}
+
+@media (min-width: 1200px) {
+  .profile-item {
+    flex-direction: row;
+  }
+
+  .profile-item:nth-of-type(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}
+
+@media print {
+  img {
+    --profile-img-size: 3rem;
+  }
 }
 </style>

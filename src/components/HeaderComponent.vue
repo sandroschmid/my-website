@@ -1,12 +1,12 @@
 <script setup lang="ts">
+import PersonComponent from '@/components/personal/PersonComponent.vue';
 import Avatar from './personal/AvatarComponent.vue';
-import Social from './personal/SocialComponent.vue';
-import TickTackToe from './ui/TickTackToeComponent.vue';</script>
+import Social from './personal/SocialComponent.vue';</script>
 
 <template>
   <header>
     <Avatar />
-    <h1>Sandro 🤓 Schmid</h1>
+    <h1>Sandro 🧑‍💻 Schmid</h1>
     <div class="caption">
       <p>
         ✨software-engineering ✨angular ✨aws ✨java ✨spring-boot ✨frontend
@@ -16,12 +16,13 @@ import TickTackToe from './ui/TickTackToeComponent.vue';</script>
     </div>
     <Social />
     <div class="spacer"></div>
-    <TickTackToe />
+    <PersonComponent />
   </header>
 </template>
 
 <style scoped>
 header {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

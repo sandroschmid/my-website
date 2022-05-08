@@ -36,8 +36,21 @@ h4, h5, h6 {
   color: var(--color-text-light);
 }
 
+@media (min-height: 910px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
 @media (min-width: 1200px) {
   body {
     line-height: 1.6;
+  }
+}
+
+@media print {
+  body {
+    font-size: 14px;
+    line-height: 1.4;
   }
 }
